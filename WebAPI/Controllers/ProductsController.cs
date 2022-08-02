@@ -2,6 +2,7 @@
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -25,7 +26,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            
+
             var result = _productService.GetAll();
             if (result.Success)
             {
@@ -33,7 +34,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
 
-           }
+        }
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
@@ -57,6 +58,15 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+      
+      
+
+
+
+
+
+
         }
+
     }
 
